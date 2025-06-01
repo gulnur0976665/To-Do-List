@@ -1,0 +1,30 @@
+.EmptyState {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  @media (max-width: 428px) {
+    gap: 0;
+  }
+  .imgEmpty {
+    width: 250px;
+    height: 250px;
+    object-fit: contain;
+    @media (max-width: 884px) {
+      width: 350px;
+      height: 350px;
+    }
+    @media (max-width: 428px) {
+      width: 300px;
+      height: 300px;
+    }
+    @media (max-width: 320px) {
+      width: 180px;
+      height: 180px;
+    }
+  }
+  h1 {
+    font-size: clamp(16px, 1.5vw, 24px);
+    font-weight: 500;
+  }
+}

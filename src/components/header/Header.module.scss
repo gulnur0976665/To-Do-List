@@ -1,0 +1,95 @@
+.header {
+  padding: 50px 0;
+  .content {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 25px;
+    .title {
+      font-size: clamp(16px, 2vw, 26px);
+    }
+    .controls {
+      display: flex;
+      align-items: center;
+      gap: clamp(10px, 2vw, 20px);
+      .search {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 clamp(8px, 1vw, 12px);
+        max-width: 600px;
+        width: 100%;
+        height: 38px;
+        border: 2px solid gray;
+        border-radius: 5px;
+
+        @media (max-width: 428px) {
+          width: 300px;
+        }
+        @media (max-width: 415px) {
+          width: 270px;
+        }
+        @media (max-width: 391px) {
+          width: 250px;
+        }
+        @media (max-width: 360px) {
+          width: 235px;
+        }
+        @media (max-width: 320px) {
+          width: 200px;
+        }
+        .searchInput {
+          width: clamp(320px, 50vw, 530px);
+          background: none;
+          border: none;
+          outline: none;
+          font-weight: 600;
+          color: gray;
+          font-size: clamp(14px, 1vw, 16px);
+          &::placeholder {
+            color: gray;
+            font-weight: 600;
+            font-size: clamp(14px, 1vw, 16px);
+          }
+        }
+        .searchIcon {
+          font-size: clamp(18px, 2vw, 24px);
+        }
+      }
+      .filter {
+        width: clamp(60px, 8vw, 80px);
+        height: clamp(30px, 4vw, 40px);
+        border-radius: 5px;
+        background: slateblue;
+        color: white;
+        font-size: clamp(14px, 1vw, 16px);
+        font-weight: 600;
+        padding: 0 clamp(6px, 1vw, 10px);
+        outline: none;
+
+        @media (max-width: 382px) {
+          width: 50px;
+          font-size: 10px;
+        }
+
+        option {
+          background: white;
+          color: slateblue;
+        }
+      }
+
+      .themeToggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: clamp(30px, 4vw, 38px);
+        height: clamp(30px, 4vw, 38px);
+        font-size: clamp(16px, 1.5vw, 20px);
+        border-radius: 5px;
+        background: slateblue;
+        color: white;
+        cursor: pointer;
+      }
+    }
+  }
+}
