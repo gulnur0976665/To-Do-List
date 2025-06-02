@@ -56,7 +56,7 @@ const NoteModal: React.FC<NoteModalProps> = ({
 
   // APPLY
   const handleApply = () => {
-    if (!value.trim()) {
+    if (!value.trim() && !description.trim() && !deadline.trim()) {
       alert("Поле не должно быть пустым!");
       return;
     }

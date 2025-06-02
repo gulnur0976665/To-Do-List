@@ -38,7 +38,14 @@ export const TodoSlice = createSlice({
 
     updateTodo(state, action) {
       state.todo = state.todo.map((el) =>
-        el.id === action.payload.id ? { ...el, name: action.payload.name } : el
+        el.id === action.payload.id
+          ? {
+              ...el,
+              name: action.payload.name,
+              description: action.payload.description,
+              deadline: action.payload.deadline,
+            }
+          : el
       );
       localStorage.setItem("todo", JSON.stringify(state.todo));
     },
