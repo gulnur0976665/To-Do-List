@@ -4,6 +4,7 @@ import EmptyState from "./components/emptyState/EmptyState";
 import AddButton from "./components/AddButton";
 import TaskList from "./components/taskList/TaskList";
 import { useAppSelector } from "./redux/store";
+import { ITask } from "./types/Task";
 
 const App = () => {
   const { todo, color } = useAppSelector((s) => s.todo);

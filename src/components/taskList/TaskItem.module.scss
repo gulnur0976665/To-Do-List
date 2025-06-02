@@ -4,20 +4,17 @@
   display: flex;
   flex-direction: column;
   gap: 14px;
-  cursor: pointer;
 
   .taskItemWrapper {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-
+    align-items: start;
     &:hover .right {
       display: flex;
     }
 
     .left {
       display: flex;
-      align-items: center;
       gap: 10px;
 
       .checkbox {
@@ -49,23 +46,38 @@
         top: 0;
         left: 4px;
       }
+      .block {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
 
-      .taskTitle {
-        font-size: clamp(16px, 2vw, 20px);
-        font-weight: 600;
-        transition: all 0.2s ease;
-      }
-
-      .checkedTitle {
-        text-decoration: line-through;
-        color: gray;
-        font-weight: 500;
+        .taskTitle {
+          font-size: clamp(16px, 2vw, 20px);
+          font-weight: 600;
+          transition: all 0.2s ease;
+          cursor: pointer;
+        }
+        .checkedTitle {
+          text-decoration: line-through;
+          color: gray;
+          font-weight: 500;
+        }
+        .taskDetails {
+          display: flex;
+          flex-direction: column;
+          gap: 5px;
+          .taskDeadline {
+            color: gray;
+          }
+          .taskDescription {
+            font-size: 16px;
+          }
+        }
       }
     }
 
     .right {
       display: none;
-      align-items: center;
       gap: 8px;
 
       .iconPencil {

@@ -6,7 +6,11 @@ import UndoBtn from "./UndoBtn";
 interface NoteModalProps {
   title: string;
   value: string;
-  onChange: (value: string) => void;
+  onChange: (val: string) => void;
+  description: string;
+  onDescriptionChange: (val: string) => void;
+  deadline: string;
+  onDeadlineChange: (val: string) => void;
   onCancel: () => void;
   onApply: () => void;
 }
@@ -15,6 +19,10 @@ const NoteModal: React.FC<NoteModalProps> = ({
   title,
   value,
   onChange,
+  description,
+  onDescriptionChange,
+  deadline,
+  onDeadlineChange,
   onCancel,
   onApply,
 }) => {
@@ -94,10 +102,20 @@ const NoteModal: React.FC<NoteModalProps> = ({
         <div className={scss.newNote}>
           <h2>{title}</h2>
           <input
-            onChange={(e) => onChange(e.target.value)}
-            value={value}
             type="text"
-            placeholder="Input your note..."
+            value={value}
+            onChange={(e) => onChange(e.target.value)}
+            placeholder="Task name"
+          />
+          <input
+            value={description}
+            onChange={(e) => onDescriptionChange(e.target.value)}
+            placeholder="Description"
+          />
+          <input
+            type="date"
+            value={deadline}
+            onChange={(e) => onDeadlineChange(e.target.value)}
           />
         </div>
 

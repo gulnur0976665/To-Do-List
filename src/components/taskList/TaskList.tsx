@@ -1,6 +1,7 @@
 import React from "react";
 import TaskItem from "./TaskItem";
 import scss from "./TaskList.module.scss";
+import { ITask } from "../../types/Task";
 
 interface Props {
   todo: ITask[];
